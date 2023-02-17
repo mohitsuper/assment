@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+<style>
+*{
+  transition: 0.5s;
+}
+  body{
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    display: flex;
+  }
+  
+.main{
+      justify-content: center;
+      align-items: center;
+      display: flex;
+  height: 500px;
+  width: 100%;
+  background: #eee;
+  overflow: hidden;
+}
+
+.box{
+  height: 200px;
+  width: 200px;
+  background: #C4201D;
+  cursor: pointer;
+}
+</style>
+<body>
+<div class="main">
+  <div class="box" id="box" onmouseup="color()"  ondrop="colordown()"></div>
+</div>
+</body>
+<script>
+  var my = document.getElementById('box');
+  
+  function color()
+  {
+    if(my.style.background = 'red')
+    {
+     box.style.background ='blue';
+     box.style.boxShadow = '0px 0px 200px 200px blue';
+    }
+    
+    else
+    {
+           box.style.background = 'red';
+           box.style.boxShadow = '0px 0px 0px 0px ';
+    }
+     
+  }
+  
+  function colordown()
+  {
+     box.style.background ='#C4201D';
+  }
+    
+  
+</script>
+</html>

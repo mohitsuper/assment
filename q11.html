@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>HTML</title>
+  
+  <!-- HTML -->
+  <style>
+    *{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+    font-size: 15pt;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    min-height: 100vh;
+    
+}
+.box{
+  width:90%;
+  max-width: 600px;
+  position: relative;
+}
+.box input{
+  outline: none;
+  border: none;
+  border-bottom: 1px solid black;
+  padding: 5px;
+  font-size: 25px;
+  z-index: 10;
+}
+
+.box .name{
+  position: absolute;
+  top:20px;
+  font-size: 15px;
+  left:0px;
+  color:#797A86;
+  transition: top 0.5s;
+}
+.box .name:foces{
+  top:-10px;
+}
+
+.box .error{
+  position: absolute;
+  left:2px;
+  font-size: 20px;
+  font-weight: 700;
+  margin-top: 3px;
+  color:#D73A3A;
+}
+  </style>
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <form>
+    <div class="box">
+    <label class="name">Email</label>
+  <input type="email" class="text" spellcheck="false" onkeyup="mohit()">
+    <label class="error"></label>
+    </div>
+  </form>
+  <script>
+    var email = document.getElementsByClassName('name')[0];
+    var input= document.getElementsByClassName('text')[0];
+    var massage= document.getElementsByClassName('error')[0];
+
+function mohit(){
+email.style.top = '-10px';
+
+ if (!input.value.match(/^[A-Za-z \._\-0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/)) {
+   input.style.borderBottomColor = 'red';
+   massage.innerHTML = 'plese enter the valid email';
+   return false;
+ }
+
+ else {
+   input.style.borderBottomColor = 'green';
+   massage.innerHTML = '';
+   return true;
+
+ }
+
+}
+
+</script>
+</body>
+
+</html>

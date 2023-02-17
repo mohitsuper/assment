@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+
+<body>
+<select id="list1">
+  <option value="option1">Option 1</option>
+  <option value="option2">Option 2</option>
+  <option value="option3">Option 3</option>
+</select>
+
+<select id="list2">
+</select>
+
+</body>
+<script>
+  // Get the first list element
+var list1 = document.getElementById("list1");
+
+// Get the second list element
+var list2 = document.getElementById("list2");
+
+// Add event listener for when the first list changes
+list1.addEventListener("change", function() {
+  // Clear the second list
+  list2.innerHTML = "";
+
+  // Get the selected option from the first list
+  var selectedOption = list1.options[list1.selectedIndex].value;
+
+  // Add options to the second list based on the selection in the first list
+  if (selectedOption === "option1") {
+    list2.innerHTML = "<option value='suboption1'>Suboption 1</option><option value='suboption2'>Suboption 2</option>";
+  } else if (selectedOption === "option2") {
+    list2.innerHTML = "<option value='suboption3'>Suboption 3</option><option value='suboption4'>Suboption 4</option>";
+  } else if (selectedOption === "option3") {
+    list2.innerHTML = "<option value='suboption5'>Suboption 5</option><option value='suboption6'>Suboption 6</option>";
+  }
+});
+
+</script>
+</html>
